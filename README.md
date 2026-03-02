@@ -22,7 +22,7 @@ pinned: false
 ---
 
 ## 🔗 Live Links
-- **Live Demo (Hugging Face)**: [https://huggingface.co/spaces/Ayan113/RiskIntellect-AI](https://huggingface.co/spaces/Ayan113/RiskIntellect-AI)
+- **Live Demo (Hugging Face)**: [https://huggingface.co/spaces/Ayan1318/RiskIntellect-AI](https://huggingface.co/spaces/Ayan1318/RiskIntellect-AI)
 - **GitHub Repository**: [https://github.com/Ayan113/RiskIntellect-AI](https://github.com/Ayan113/RiskIntellect-AI)
 
 > [!TIP]
