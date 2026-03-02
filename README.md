@@ -12,13 +12,14 @@
 ---
 
 ## 🔗 Live Links
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Ayan113/RiskIntellect-AI)
+
 - **Live Demo**: [https://riskintellect-ai.onrender.com](https://riskintellect-ai.onrender.com/dashboard)
 - **API Documentation**: [https://riskintellect-ai.onrender.com/docs](https://riskintellect-ai.onrender.com/docs)
 - **GitHub Repository**: [https://github.com/Ayan113/RiskIntellect-AI](https://github.com/Ayan113/RiskIntellect-AI)
-- **Walkthrough Demo**: [Walkthrough Artifact](file:///Users/ayanchatterjee/.gemini/antigravity/brain/9eda42f4-0ed7-4e49-84e0-3e42cf576fa9/walkthrough.md)
 
-> [!NOTE]
-> The live demo link above is a placeholder for your Render deployment. Once you connect your GitHub repo to Render using the included `render.yaml`, update this link with your actual service URL.
+> [!TIP]
+> **To Deploy**: Click the "Deploy to Render" button above. Render will use the included `render.yaml` to set up the service.
 
 ---
 
