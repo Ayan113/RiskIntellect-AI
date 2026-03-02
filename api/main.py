@@ -38,7 +38,7 @@ async def lifespan(app: FastAPI):
     Shutdown: Cleanup and logging
     """
     logger.info("=" * 60)
-    logger.info("Financial Risk Intelligence Copilot — Starting up")
+    logger.info("RiskIntellect-AI — Starting up")
     logger.info("=" * 60)
 
     # Pre-load components (non-blocking — failures are logged, not fatal)
@@ -58,7 +58,7 @@ async def lifespan(app: FastAPI):
 
     yield  # Application runs here
 
-    logger.info("Financial Risk Intelligence Copilot — Shutting down")
+    logger.info("RiskIntellect-AI — Shutting down")
 
 
 def create_app() -> FastAPI:
@@ -69,9 +69,9 @@ def create_app() -> FastAPI:
         Configured FastAPI instance.
     """
     app = FastAPI(
-        title="Financial Risk Intelligence Copilot",
+        title="RiskIntellect-AI",
         description=(
-            "Production-grade AI system combining supervised ML fraud detection, "
+            "Made by Ayan — Production-grade AI system combining supervised ML fraud detection, "
             "RAG over regulatory documents, and LLM reasoning for risk assessment."
         ),
         version="1.0.0",

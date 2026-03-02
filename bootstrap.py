@@ -159,7 +159,7 @@ def build_rag_indices():
 
 if __name__ == "__main__":
     print("\n" + "=" * 60)
-    print("🛡️  Financial Risk Intelligence Copilot — Bootstrap")
+    print("🛡️  RiskIntellect-AI — Bootstrap")
     print("=" * 60 + "\n")
 
     try:
