@@ -1,5 +1,5 @@
 /* ============================================================
-   Financial Risk Intelligence Copilot — Application Logic
+   RiskIntellect-AI — Application Logic
    Connects the premium dashboard to the FastAPI backend
    ============================================================ */
 
