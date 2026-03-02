@@ -1,3 +1,13 @@
+---
+title: RiskIntellect-AI
+emoji: 🛡️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # 🛡️ RiskIntellect-AI
 
 > **Made by Ayan**
@@ -12,14 +22,11 @@
 ---
 
 ## 🔗 Live Links
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Ayan113/RiskIntellect-AI)
-
-- **Live Demo**: [https://riskintellect-ai.onrender.com](https://riskintellect-ai.onrender.com/dashboard)
-- **API Documentation**: [https://riskintellect-ai.onrender.com/docs](https://riskintellect-ai.onrender.com/docs)
+- **Live Demo (Hugging Face)**: [https://huggingface.co/spaces/Ayan113/RiskIntellect-AI](https://huggingface.co/spaces/Ayan113/RiskIntellect-AI)
 - **GitHub Repository**: [https://github.com/Ayan113/RiskIntellect-AI](https://github.com/Ayan113/RiskIntellect-AI)
 
 > [!TIP]
-> **To Deploy**: Click the "Deploy to Render" button above. Render will use the included `render.yaml` to set up the service.
+> **Free Deployment**: This project is configured for **Hugging Face Spaces** (100% free, no credit card required). Follow the instructions below to sync your GitHub repo to Hugging Face.
 
 ---
 

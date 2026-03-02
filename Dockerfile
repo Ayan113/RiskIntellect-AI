@@ -36,6 +36,7 @@ COPY llm_layer/ llm_layer/
 COPY evaluation/ evaluation/
 COPY api/ api/
 COPY utils/ utils/
+COPY frontend/ frontend/
 
 # Create necessary directories
 RUN mkdir -p artifacts data/raw data/processed data/regulatory_docs mlruns logs && \
@@ -44,12 +45,12 @@ RUN mkdir -p artifacts data/raw data/processed data/regulatory_docs mlruns logs 
 # Switch to non-root user
 USER appuser
 
-# Expose API port
-EXPOSE 8000
+# Expose API port (HF Spaces defaults to 7860)
+EXPOSE 7860
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" || exit 1
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:7860/health')" || exit 1
 
 # Run the application
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "7860", "--workers", "2"]
