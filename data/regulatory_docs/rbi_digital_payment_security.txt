@@ -1,0 +1,82 @@
+Reserve Bank of India
+Framework for Digital Payment Security Controls
+Circular No. RBI/2024-25/42 — DPSS.CO.OD.No.629/06.08.005/2024-25
+Dated: January 15, 2024
+
+================================================================
+SECTION 1 — SCOPE AND OBJECTIVES
+================================================================
+
+1.1 This framework applies to all authorized Payment System Operators (PSOs) and Payment System Participants (PSPs) engaged in digital payment services.
+
+1.2 The objective is to ensure robust security controls in digital payment systems to protect consumers from fraud and unauthorized transactions.
+
+================================================================
+SECTION 2 — FRAUD RISK MANAGEMENT
+================================================================
+
+2.1 Fraud Monitoring Systems
+a) PSOs/PSPs shall implement real-time fraud monitoring systems capable of detecting suspicious patterns.
+b) Machine learning-based fraud detection models shall be deployed where transaction volumes exceed 1 million per day.
+c) Fraud monitoring systems must achieve a minimum detection rate of 95% for known fraud patterns.
+
+2.2 Transaction Velocity Checks
+a) Systems must flag transactions exceeding velocity thresholds:
+   - More than 5 transactions within 10 minutes from same account
+   - Cumulative amount exceeding ₹2 lakhs within 24 hours
+   - Cross-border transactions exceeding ₹5 lakhs in 7 days
+b) Flagged transactions must be subjected to additional authentication or manual review.
+
+2.3 Geolocation and Device Checks
+a) Transactions from new devices must trigger additional verification.
+b) Transactions from high-risk geographies must be subjected to enhanced monitoring.
+
+================================================================
+SECTION 3 — CUSTOMER PROTECTION
+================================================================
+
+3.1 Liability Framework
+a) Zero liability for unauthorized electronic transactions reported within 3 working days.
+b) Limited liability (max ₹10,000) for transactions reported between 4–7 working days.
+c) Full customer liability if reported after 7 working days.
+
+3.2 Cooling Period
+a) A cooling period of at least 4 hours shall be provided for first-time beneficiary registration.
+b) Enhanced cooling period for high-value transactions (above ₹2 lakhs).
+
+3.3 Transaction Limits
+a) Default per-transaction limit shall not exceed ₹1 lakh for new digital payment users.
+b) Customers may request enhancement of limits after completing full KYC.
+
+================================================================
+SECTION 4 — REPORTING REQUIREMENTS
+================================================================
+
+4.1 Incident Reporting
+a) All fraud incidents must be reported to RBI within 6 hours of detection.
+b) Monthly fraud reports must be submitted in the prescribed format.
+c) Cyber security incidents must be reported to CERT-In within 6 hours.
+
+4.2 Customer Notification
+a) Customers must be notified of all digital transactions via SMS and email in real-time.
+b) Customers must be provided with a mechanism to report unauthorized transactions 24/7.
+c) A dedicated helpline for fraud reporting must be available.
+
+================================================================
+SECTION 5 — TECHNOLOGY STANDARDS
+================================================================
+
+5.1 Authentication
+a) Multi-factor authentication (MFA) is mandatory for all digital payment transactions.
+b) Biometric authentication may be used as a factor.
+c) OTP validity shall not exceed 10 minutes.
+
+5.2 Encryption
+a) All payment data in transit must be encrypted using TLS 1.2 or higher.
+b) Payment data at rest must be encrypted using AES-256 or equivalent.
+c) Tokenization is recommended for card-on-file transactions.
+
+5.3 API Security
+a) Payment APIs must implement OAuth 2.0 or equivalent authentication.
+b) Rate limiting must be applied to prevent abuse.
+c) API calls must be logged and monitored.

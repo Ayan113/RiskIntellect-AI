@@ -1,0 +1,54 @@
+# ============================================================
+# Docker Compose — Financial Risk Intelligence Copilot
+# ============================================================
+
+version: "3.9"
+
+services:
+  # ── Main Application ──
+  copilot-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fraud-copilot-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    volumes:
+      - ./data:/app/data:ro
+      - ./artifacts:/app/artifacts
+      - mlflow-data:/app/mlruns
+    depends_on:
+      - mlflow
+    restart: unless-stopped
+    networks:
+      - copilot-net
+
+  # ── MLflow Tracking Server ──
+  mlflow:
+    image: python:3.11-slim
+    container_name: fraud-copilot-mlflow
+    command: >
+      bash -c "pip install mlflow==2.19.0 --quiet &&
+               mlflow server --host 0.0.0.0 --port 5000
+               --backend-store-uri sqlite:///mlflow.db
+               --default-artifact-root /mlflow-artifacts"
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow-data:/mlflow-artifacts
+      - mlflow-db:/mlflow.db
+    restart: unless-stopped
+    networks:
+      - copilot-net
+
+volumes:
+  mlflow-data:
+  mlflow-db:
+
+networks:
+  copilot-net:
+    driver: bridge

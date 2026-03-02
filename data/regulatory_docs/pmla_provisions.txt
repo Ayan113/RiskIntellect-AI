@@ -1,0 +1,82 @@
+Prevention of Money-Laundering Act, 2002 (PMLA)
+Key Provisions Summary for Financial Institutions
+
+================================================================
+CHAPTER I — DEFINITIONS AND SCOPE
+================================================================
+
+Section 2(ra) — "Money-laundering"
+Whosoever directly or indirectly attempts to indulge or knowingly assists or knowingly is a party or is actually involved in any process or activity connected with the proceeds of crime including its concealment, possession, acquisition or use and projecting or claiming it as untainted property shall be guilty of offence of money-laundering.
+
+Section 2(u) — "Proceeds of crime"
+Any property derived or obtained, directly or indirectly, by any person as a result of criminal activity relating to a scheduled offence or the value of any such property.
+
+================================================================
+CHAPTER II — OBLIGATIONS OF FINANCIAL INSTITUTIONS
+================================================================
+
+Section 12 — Obligations of Banking Companies and Financial Institutions
+(1) Every banking company, financial institution and intermediary shall:
+    a) Maintain records of all transactions, including:
+       - Nature and value of transactions
+       - Parties involved
+       - Date and time of transaction
+    b) Furnish information to the Director (FIU-India):
+       - Cash Transaction Reports (CTR) for cash transactions above ₹10 lakhs
+       - Suspicious Transaction Reports (STR)
+       - Cross-border wire transfer reports
+    c) Verify identity of clients through valid documents
+    d) Maintain records for a period of 5 years
+
+Section 12A — Enhanced Due Diligence
+For transactions that are:
+a) Complex
+b) Unusually large
+c) Unusual patterns with no apparent economic purpose
+d) Involving PEPs (Politically Exposed Persons)
+The institution must:
+- Examine the background and purpose
+- Set forth findings in writing
+- Keep findings available for regulators
+
+================================================================
+CHAPTER III — ATTACHMENT AND CONFISCATION
+================================================================
+
+Section 5 — Attachment of Property
+(1) The Director or authorized officer may provisionally attach property believed to be "proceeds of crime" for a period not exceeding 180 days.
+
+Section 8 — Adjudication
+(1) The Adjudicating Authority shall decide whether property is involved in money-laundering within a period of one year.
+
+================================================================
+CHAPTER IV — PENALTIES
+================================================================
+
+Section 4 — Punishment for Money-Laundering
+Whoever commits the offence of money-laundering shall be punishable with:
+a) Rigorous imprisonment for a term not less than 3 years, extendable to 7 years
+b) Fine which may extend to ₹5 lakhs
+c) For offences under the Narcotic Drugs and Psychotropic Substances Act — imprisonment up to 10 years
+
+Section 13 — Penalty for Non-Compliance
+Failure to comply with Section 12 obligations:
+a) First offence: Fine of ₹10,000 to ₹1 lakh
+b) Continuing offence: ₹1,00,000 per day of default
+
+================================================================
+SCHEDULE — LIST OF SCHEDULED OFFENCES
+================================================================
+
+Part A (Offences under Indian Penal Code):
+- Sections 420, 467, 471 — Fraud and forgery
+- Sections 384-389 — Extortion
+- Section 406 — Criminal breach of trust
+
+Part B (Offences under other Acts):
+- NDPS Act — Drug trafficking
+- Arms Act — Illegal arms dealing
+- Wildlife Protection Act — Wildlife crimes
+- Prevention of Corruption Act — Corruption offences
+- SEBI Act — Securities fraud
+- Customs Act — Smuggling

@@ -1,0 +1,100 @@
+Reserve Bank of India
+Master Direction on Know Your Customer (KYC) — DBR.AML.BC.No.81/14.01.001/2015-16
+Dated: February 25, 2016 (Updated: May 2024)
+
+================================================================
+CHAPTER I — PRELIMINARY
+================================================================
+
+1.1 Short Title and Commencement
+These directions shall be called the Reserve Bank of India (Know Your Customer) Directions, 2016.
+
+1.2 Applicability
+These directions shall apply to all Regulated Entities (REs) as defined under Section 2 of the Prevention of Money-laundering Act, 2002 (PMLA).
+
+1.3 Purpose
+The objective of KYC/AML/CFT guidelines is to prevent banks/financial institutions from being used, intentionally or unintentionally, by criminal elements for money laundering or terrorist financing activities.
+
+================================================================
+CHAPTER II — CUSTOMER DUE DILIGENCE (CDD)
+================================================================
+
+2.1 Customer Identification
+a) No account shall be opened in anonymous or fictitious/benami name(s).
+b) REs shall identify the customer whether regular or occasional, and verify their identity using reliable, independent source documents.
+c) For individuals: PAN, Aadhaar, passport, voter ID, or driving license.
+
+2.2 Risk Categorization
+a) REs shall apply CDD measures based on risk assessment.
+b) Customers shall be categorized into Low, Medium, and High risk.
+c) Enhanced Due Diligence (EDD) shall be applied for high-risk customers.
+
+2.3 Ongoing Monitoring
+a) REs shall monitor transactions to ensure consistency with customer profile.
+b) Attention should be paid to complex, unusually large transactions.
+c) Suspicious Transaction Reports (STRs) must be filed with FIU-India within 7 days.
+
+================================================================
+CHAPTER III — WIRE TRANSFER REGULATIONS
+================================================================
+
+3.1 Cross-Border Wire Transfers
+a) All cross-border wire transfers of ₹50,000 and above must include complete originator information.
+b) Beneficiary information must be maintained for at least 5 years.
+
+3.2 Domestic Wire Transfers
+a) For domestic transfers above ₹50,000, originator information must accompany the transfer.
+
+================================================================
+CHAPTER IV — SUSPICIOUS TRANSACTION REPORTING
+================================================================
+
+4.1 Definition
+A suspicious transaction is one that gives rise to a reasonable ground of suspicion that it may involve proceeds of an offence, regardless of the amount.
+
+4.2 Indicators of Suspicious Transactions
+a) Transactions that do not appear to have economic rationale.
+b) Transactions inconsistent with the customer's known sources of income.
+c) Frequent cash deposits followed by immediate wire transfers.
+d) Rapid movement of funds without clear business purpose.
+e) Transactions involving high-risk jurisdictions.
+f) Structuring transactions to avoid reporting thresholds (smurfing).
+
+4.3 Reporting Obligations
+a) REs must file Cash Transaction Reports (CTRs) for transactions above ₹10 lakhs.
+b) STRs must be filed within 7 days of identification.
+c) Counterfeit Currency Reports (CCRs) must be filed for counterfeit notes detected.
+d) Non-Profit Organisation Transaction Reports (NTRs) as applicable.
+
+================================================================
+CHAPTER V — RECORD KEEPING
+================================================================
+
+5.1 Retention Period
+a) All customer identification records must be maintained for at least 5 years after business relationship ends.
+b) Transaction records must be maintained for at least 5 years from the date of transaction.
+
+5.2 Digital Records
+a) Records may be maintained in electronic form subject to existing legal requirements.
+
+================================================================
+CHAPTER VI — PENALTIES
+================================================================
+
+6.1 Non-Compliance
+a) Failure to observe these directions may attract penalties under the Banking Regulation Act, 1949 or Payment and Settlement Systems Act, 2007.
+b) Officers found negligent may face disciplinary action.
+c) Persistent non-compliance may result in license revocation.
+
+================================================================
+ANNEXURE — DIGITAL KYC
+================================================================
+
+A.1 Video-based Customer Identification Process (V-CIP)
+a) REs may perform V-CIP as an alternative to in-person verification.
+b) The process must include live photograph and video with timestamp.
+c) Aadhaar OTP-based e-KYC is permitted for accounts up to ₹1 lakh.
+
+A.2 Central KYC Registry (CKYCR)
+a) All REs must upload KYC data to CKYCR.
+b) KYC Identifier (KIN) must be communicated to the customer.

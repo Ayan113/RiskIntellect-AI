@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Risk Intelligence Copilot</title>
+  <meta name="description" content="AI-powered fraud detection, regulatory search, and risk assessment dashboard">
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- ═══════ SIDEBAR ═══════ -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon">🛡️</div>
+        <h1>Risk Copilot<span>Financial Intelligence</span></h1>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-item active" onclick="showPage('dashboard')" id="nav-dashboard">
+          <span class="icon">📊</span> Dashboard
+        </div>
+        <div class="nav-item" onclick="showPage('scorer')" id="nav-scorer">
+          <span class="icon">🔍</span> Transaction Scorer
+        </div>
+        <div class="nav-item" onclick="showPage('rag')" id="nav-rag">
+          <span class="icon">📜</span> Regulatory Search
+        </div>
+        <div class="nav-item" onclick="showPage('copilot')" id="nav-copilot">
+          <span class="icon">🤖</span> Copilot Assessment
+        </div>
+        <div class="nav-item" onclick="showPage('health')" id="nav-health">
+          <span class="icon">💓</span> System Health
+        </div>
+      </nav>
+
+      <div class="sidebar-status" id="sidebar-status">
+        <span class="status-dot green"></span>
+        <span style="font-size: 12px; color: var(--text-muted);">System Online</span>
+      </div>
+    </aside>
+
+    <!-- ═══════ MAIN CONTENT ═══════ -->
+    <main class="main-content">
+
+      <!-- ── DASHBOARD PAGE ── -->
+      <div class="page active" id="page-dashboard">
+        <div class="page-header">
+          <h2>Dashboard</h2>
+          <p>Financial Risk Intelligence Copilot — System Overview</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">API Status</div>
+            <div class="stat-value" id="dash-api-status">—</div>
+            <div class="stat-icon">🌐</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">ML Engine</div>
+            <div class="stat-value" id="dash-ml-status">—</div>
+            <div class="stat-icon">🧠</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">RAG Engine</div>
+            <div class="stat-value" id="dash-rag-status">—</div>
+            <div class="stat-icon">📚</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">LLM Layer</div>
+            <div class="stat-value" id="dash-llm-status">—</div>
+            <div class="stat-icon">🤖</div>
+          </div>
+        </div>
+
+        <div class="section-grid">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">🏗️ System Architecture</span>
+            </div>
+            <div style="font-size:13px; color: var(--text-secondary); line-height: 1.8;">
+              <p><strong style="color: var(--text-accent);">ML Engine</strong> → XGBoost fraud detection + SHAP explainability</p>
+              <p><strong style="color: var(--text-accent);">RAG Engine</strong> → BM25 + FAISS hybrid retrieval with cross-encoder reranking</p>
+              <p><strong style="color: var(--text-accent);">LLM Layer</strong> → GPT-4o reasoning with hallucination guardrails</p>
+              <p><strong style="color: var(--text-accent);">Evaluation</strong> → Automated metrics + adversarial testing</p>
+              <p style="margin-top: 12px; color: var(--text-muted); font-size: 11px;">
+                Data Flow: Transaction → ML Score → SHAP → RAG Context → LLM Reasoning → Risk Assessment
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">⚡ Quick Actions</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <button class="btn btn-primary" onclick="showPage('scorer')">🔍 Score a Transaction</button>
+              <button class="btn btn-ghost" onclick="showPage('rag')">📜 Search Regulations</button>
+              <button class="btn btn-ghost" onclick="showPage('copilot')">🤖 Full Risk Assessment</button>
+              <button class="btn btn-ghost" onclick="refreshHealth()">💓 Refresh Health Status</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TRANSACTION SCORER PAGE ── -->
+      <div class="page" id="page-scorer">
+        <div class="page-header">
+          <h2>Transaction Scorer</h2>
+          <p>Score transactions for fraud probability using the XGBoost ML model with SHAP explanations</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">📝 Transaction Features</span>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn btn-ghost" onclick="loadSampleTransaction('normal')">📋 Normal Sample</button>
+              <button class="btn btn-ghost" onclick="loadSampleTransaction('suspicious')">⚠️ Suspicious Sample</button>
+            </div>
+          </div>
+
+          <div class="feature-grid" id="feature-grid">
+            <!-- Generated by JS -->
+          </div>
+
+          <div style="margin-top: var(--space-lg); display: flex; gap: 12px;">
+            <button class="btn btn-primary" id="btn-score" onclick="scoreTransaction()">
+              🔍 Score Transaction
+            </button>
+            <button class="btn btn-ghost" onclick="clearFeatures()">Clear</button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div id="scorer-results" style="display: none;">
+          <div class="result-panel">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
+              <h3 style="font-size: 16px; font-weight: 700;">Prediction Result</h3>
+              <span class="risk-badge" id="scorer-risk-badge">—</span>
+            </div>
+
+            <div class="prob-bar-container">
+              <div class="prob-bar-label">
+                <span style="color: var(--text-secondary);">Fraud Probability</span>
+                <span style="font-family: 'JetBrains Mono'; font-weight: 700;" id="scorer-prob-text">—</span>
+              </div>
+              <div class="prob-bar">
+                <div class="prob-bar-fill" id="scorer-prob-bar" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="result-row">
+              <span class="result-key">Transaction ID</span>
+              <span class="result-value" id="scorer-txn-id">—</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Is Fraud</span>
+              <span class="result-value" id="scorer-is-fraud">—</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Threshold</span>
+              <span class="result-value" id="scorer-threshold">—</span>
+            </div>
+          </div>
+
+          <!-- Raw JSON -->
+          <div class="card mt-lg">
+            <div class="card-header">
+              <span class="card-title">📦 Raw Response</span>
+            </div>
+            <pre class="json-output" id="scorer-json"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RAG SEARCH PAGE ── -->
+      <div class="page" id="page-rag">
+        <div class="page-header">
+          <h2>Regulatory Search</h2>
+          <p>Search RBI circulars, PMLA provisions, and payment security guidelines using hybrid RAG retrieval</p>
+        </div>
+
+        <div class="tabs" id="rag-tabs">
+          <div class="tab active" onclick="setRagTab('search')">🔍 Document Search</div>
+          <div class="tab" onclick="setRagTab('answer')">💬 Q&A (AI Answer)</div>
+        </div>
+
+        <div class="card">
+          <div class="form-group">
+            <label class="form-label" id="rag-query-label">Regulatory Query</label>
+            <textarea class="form-textarea" id="rag-query"
+              placeholder="e.g., What are the KYC requirements for opening a bank account?"
+              rows="3"></textarea>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <button class="btn btn-primary" id="btn-rag" onclick="runRAGQuery()">
+              🔍 Search
+            </button>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted);">
+              <input type="checkbox" id="rag-reranker" checked> Use Reranker
+            </label>
+          </div>
+        </div>
+
+        <div id="rag-results" style="display: none;">
+          <!-- Answer section (for Q&A mode) -->
+          <div class="result-panel" id="rag-answer-panel" style="display: none;">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: var(--space-md); display: flex; align-items: center; gap: 8px;">
+              🤖 AI Answer
+              <span class="risk-badge" id="rag-grounded-badge">—</span>
+            </h3>
+            <div style="font-size: 14px; line-height: 1.8; color: var(--text-secondary);" id="rag-answer-text"></div>
+          </div>
+
+          <!-- Sources -->
+          <div class="card mt-lg">
+            <div class="card-header">
+              <span class="card-title">📄 Retrieved Sources</span>
+              <span style="font-size: 12px; color: var(--text-muted);" id="rag-result-count">0 results</span>
+            </div>
+            <div id="rag-sources-list"></div>
+          </div>
+
+          <div class="card mt-lg">
+            <div class="card-header"><span class="card-title">📦 Raw Response</span></div>
+            <pre class="json-output" id="rag-json"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── COPILOT ASSESSMENT PAGE ── -->
+      <div class="page" id="page-copilot">
+        <div class="page-header">
+          <h2>Copilot Assessment</h2>
+          <p>Full pipeline: ML scoring → SHAP explanation → RAG retrieval → LLM reasoning → Risk assessment</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">🤖 Full Risk Assessment Request</span>
+            <button class="btn btn-ghost" onclick="loadSampleTransaction('suspicious'); showPage('copilot');">Load Suspicious Sample</button>
+          </div>
+
+          <div class="feature-grid" id="copilot-feature-grid">
+            <!-- Generated by JS -->
+          </div>
+
+          <div class="form-group" style="margin-top: var(--space-lg);">
+            <label class="form-label">Regulatory Query (Optional)</label>
+            <input class="form-input" id="copilot-query"
+              placeholder="e.g., What reporting requirements apply to this transaction?">
+          </div>
+
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <button class="btn btn-primary" id="btn-copilot" onclick="runCopilotAssessment()">
+              🤖 Run Full Assessment
+            </button>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted);">
+              <input type="checkbox" id="copilot-explanation" checked> Include SHAP Explanation
+            </label>
+            <label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted);">
+              <input type="checkbox" id="copilot-regulatory" checked> Include Regulatory Context
+            </label>
+          </div>
+        </div>
+
+        <div id="copilot-results" style="display: none;">
+          <div class="result-panel">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
+              <h3 style="font-size: 16px; font-weight: 700;">🛡️ Risk Assessment</h3>
+              <span class="risk-badge" id="copilot-risk-badge">—</span>
+            </div>
+
+            <div class="prob-bar-container">
+              <div class="prob-bar-label">
+                <span style="color: var(--text-secondary);">Fraud Probability</span>
+                <span style="font-family: 'JetBrains Mono'; font-weight: 700;" id="copilot-prob-text">—</span>
+              </div>
+              <div class="prob-bar">
+                <div class="prob-bar-fill" id="copilot-prob-bar" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="copilot-result mt-lg">
+            <div class="copilot-section">
+              <h4>📋 Assessment</h4>
+              <div class="copilot-assessment" id="copilot-assessment-text">—</div>
+            </div>
+            <div class="copilot-section">
+              <h4>⚙️ Pipeline Metadata</h4>
+              <pre class="json-output" id="copilot-pipeline-json" style="max-height: 250px;"></pre>
+            </div>
+          </div>
+
+          <div class="card mt-lg">
+            <div class="card-header"><span class="card-title">📦 Full Response</span></div>
+            <pre class="json-output" id="copilot-json"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── HEALTH PAGE ── -->
+      <div class="page" id="page-health">
+        <div class="page-header">
+          <h2>System Health</h2>
+          <p>Real-time component status and API diagnostics</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">💓 Component Status</span>
+            <button class="btn btn-ghost" onclick="refreshHealth()">🔄 Refresh</button>
+          </div>
+
+          <div class="health-grid" id="health-grid">
+            <div class="empty-state">
+              <div class="icon">💓</div>
+              <p>Click Refresh to check system health</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-grid mt-lg">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">🌐 API Info</span>
+            </div>
+            <div id="api-info">
+              <div class="result-row">
+                <span class="result-key">Base URL</span>
+                <span class="result-value text-cyan">http://localhost:8000</span>
+              </div>
+              <div class="result-row">
+                <span class="result-key">Docs</span>
+                <span class="result-value"><a href="/docs" target="_blank" style="color: var(--accent-primary);">/docs (Swagger)</a></span>
+              </div>
+              <div class="result-row">
+                <span class="result-key">ReDoc</span>
+                <span class="result-value"><a href="/redoc" target="_blank" style="color: var(--accent-primary);">/redoc</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">📡 Raw Health Response</span>
+            </div>
+            <pre class="json-output" id="health-json">Click Refresh to load</pre>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

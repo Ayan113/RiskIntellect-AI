@@ -1,0 +1,105 @@
+# ============================================================
+# Financial Risk Intelligence Copilot — Configuration
+# ============================================================
+
+app:
+  name: "Financial Risk Intelligence Copilot"
+  version: "1.0.0"
+  debug: false
+  log_level: "INFO"
+
+# ------- ML Engine -------
+ml_engine:
+  data:
+    raw_path: "data/raw/creditcard.csv"
+    processed_path: "data/processed"
+    test_size: 0.15
+    val_size: 0.15
+    random_state: 42
+
+  model:
+    type: "xgboost"  # xgboost | lightgbm
+    hyperparameters:
+      n_estimators: 500
+      max_depth: 6
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      min_child_weight: 5
+      gamma: 0.1
+      reg_alpha: 0.1
+      reg_lambda: 1.0
+      eval_metric: "auc"
+      early_stopping_rounds: 50
+    threshold: 0.5
+
+  artifacts:
+    model_path: "artifacts/fraud_model.joblib"
+    scaler_path: "artifacts/scaler.joblib"
+    feature_names_path: "artifacts/feature_names.json"
+
+  mlflow:
+    tracking_uri: "mlruns"
+    experiment_name: "fraud_detection"
+
+# ------- RAG Engine -------
+rag_engine:
+  documents:
+    source_dir: "data/regulatory_docs"
+    supported_extensions: [".pdf", ".txt", ".md"]
+
+  chunking:
+    chunk_size: 512
+    chunk_overlap: 64
+    separators: ["\n\n", "\n", ". ", " "]
+
+  embeddings:
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"
+    device: "cpu"
+    batch_size: 64
+
+  vector_store:
+    index_path: "artifacts/faiss_index"
+    metadata_path: "artifacts/faiss_metadata.json"
+
+  bm25:
+    index_path: "artifacts/bm25_index.pkl"
+
+  retrieval:
+    top_k_vector: 10
+    top_k_bm25: 10
+    top_k_final: 5
+    reranker_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    fusion_weight_vector: 0.6
+    fusion_weight_bm25: 0.4
+
+# ------- LLM Layer -------
+llm_layer:
+  provider: "openai"  # openai | local
+  model: "gpt-4o"
+  temperature: 0.1
+  max_tokens: 1024
+  timeout: 30
+  retry_attempts: 3
+  retry_delay: 2
+
+  guardrails:
+    max_hallucination_score: 0.3
+    require_regulatory_citation: true
+
+# ------- Evaluation -------
+evaluation:
+  output_dir: "artifacts/evaluation_reports"
+  ml:
+    thresholds: [0.3, 0.5, 0.7, 0.9]
+  rag:
+    num_eval_queries: 20
+    faithfulness_threshold: 0.7
+    relevance_threshold: 0.6
+
+# ------- API -------
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins: ["*"]
+  rate_limit: 100  # requests per minute
