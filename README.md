@@ -1,5 +1,7 @@
 # 🛡️ RiskIntellect-AI
 
+> **Made by Ayan**
+>
 > A production-grade Intelligence system combining **supervised ML fraud detection**, **RAG-based regulatory document search**, and **LLM-grounded reasoning** for financial risk assessment.
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)

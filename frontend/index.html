@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Financial Risk Intelligence Copilot</title>
   <meta name="description" content="AI-powered fraud detection, regulatory search, and risk assessment dashboard">
   <link rel="stylesheet" href="/static/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 </head>
+
 <body>
   <div class="app-container">
 
@@ -16,6 +19,7 @@
       <div class="sidebar-logo">
         <div class="logo-icon">🛡️</div>
         <h1>Risk Copilot<span>Financial Intelligence</span></h1>
+        <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px; opacity: 0.7;">Made by Ayan</div>
       </div>
 
       <nav class="sidebar-nav">
@@ -81,10 +85,14 @@
               <span class="card-title">🏗️ System Architecture</span>
             </div>
             <div style="font-size:13px; color: var(--text-secondary); line-height: 1.8;">
-              <p><strong style="color: var(--text-accent);">ML Engine</strong> → XGBoost fraud detection + SHAP explainability</p>
-              <p><strong style="color: var(--text-accent);">RAG Engine</strong> → BM25 + FAISS hybrid retrieval with cross-encoder reranking</p>
-              <p><strong style="color: var(--text-accent);">LLM Layer</strong> → GPT-4o reasoning with hallucination guardrails</p>
-              <p><strong style="color: var(--text-accent);">Evaluation</strong> → Automated metrics + adversarial testing</p>
+              <p><strong style="color: var(--text-accent);">ML Engine</strong> → XGBoost fraud detection + SHAP
+                explainability</p>
+              <p><strong style="color: var(--text-accent);">RAG Engine</strong> → BM25 + FAISS hybrid retrieval with
+                cross-encoder reranking</p>
+              <p><strong style="color: var(--text-accent);">LLM Layer</strong> → GPT-4o reasoning with hallucination
+                guardrails</p>
+              <p><strong style="color: var(--text-accent);">Evaluation</strong> → Automated metrics + adversarial
+                testing</p>
               <p style="margin-top: 12px; color: var(--text-muted); font-size: 11px;">
                 Data Flow: Transaction → ML Score → SHAP → RAG Context → LLM Reasoning → Risk Assessment
               </p>
@@ -135,7 +143,8 @@
         <!-- Results -->
         <div id="scorer-results" style="display: none;">
           <div class="result-panel">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
+            <div
+              style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
               <h3 style="font-size: 16px; font-weight: 700;">Prediction Result</h3>
               <span class="risk-badge" id="scorer-risk-badge">—</span>
             </div>
@@ -190,8 +199,7 @@
           <div class="form-group">
             <label class="form-label" id="rag-query-label">Regulatory Query</label>
             <textarea class="form-textarea" id="rag-query"
-              placeholder="e.g., What are the KYC requirements for opening a bank account?"
-              rows="3"></textarea>
+              placeholder="e.g., What are the KYC requirements for opening a bank account?" rows="3"></textarea>
           </div>
           <div style="display: flex; gap: 12px; align-items: center;">
             <button class="btn btn-primary" id="btn-rag" onclick="runRAGQuery()">
@@ -206,7 +214,8 @@
         <div id="rag-results" style="display: none;">
           <!-- Answer section (for Q&A mode) -->
           <div class="result-panel" id="rag-answer-panel" style="display: none;">
-            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: var(--space-md); display: flex; align-items: center; gap: 8px;">
+            <h3
+              style="font-size: 16px; font-weight: 700; margin-bottom: var(--space-md); display: flex; align-items: center; gap: 8px;">
               🤖 AI Answer
               <span class="risk-badge" id="rag-grounded-badge">—</span>
             </h3>
@@ -239,7 +248,8 @@
         <div class="card">
           <div class="card-header">
             <span class="card-title">🤖 Full Risk Assessment Request</span>
-            <button class="btn btn-ghost" onclick="loadSampleTransaction('suspicious'); showPage('copilot');">Load Suspicious Sample</button>
+            <button class="btn btn-ghost" onclick="loadSampleTransaction('suspicious'); showPage('copilot');">Load
+              Suspicious Sample</button>
           </div>
 
           <div class="feature-grid" id="copilot-feature-grid">
@@ -267,7 +277,8 @@
 
         <div id="copilot-results" style="display: none;">
           <div class="result-panel">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
+            <div
+              style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-lg);">
               <h3 style="font-size: 16px; font-weight: 700;">🛡️ Risk Assessment</h3>
               <span class="risk-badge" id="copilot-risk-badge">—</span>
             </div>
@@ -334,11 +345,13 @@
               </div>
               <div class="result-row">
                 <span class="result-key">Docs</span>
-                <span class="result-value"><a href="/docs" target="_blank" style="color: var(--accent-primary);">/docs (Swagger)</a></span>
+                <span class="result-value"><a href="/docs" target="_blank" style="color: var(--accent-primary);">/docs
+                    (Swagger)</a></span>
               </div>
               <div class="result-row">
                 <span class="result-key">ReDoc</span>
-                <span class="result-value"><a href="/redoc" target="_blank" style="color: var(--accent-primary);">/redoc</a></span>
+                <span class="result-value"><a href="/redoc" target="_blank"
+                    style="color: var(--accent-primary);">/redoc</a></span>
               </div>
             </div>
           </div>
@@ -355,4 +368,5 @@
 
   <script src="/static/app.js"></script>
 </body>
+
 </html>
